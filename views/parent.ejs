@@ -1,0 +1,58 @@
+<%- include('partials/header') %>            
+   <main class="bg-gray-100">
+      <div class="container mx-auto p-4">
+
+         <h1 class="text-2xl font-bold mb-4">Tableau de bord Parents</h1>
+                      
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                      
+            <div class="bg-white rounded-lg shadow p-4">
+               <h2 class="text-lg font-semibold mb-2">Suivi des progrès de [Nom de l'enfant]</h2>
+               <div class="mb-2">
+                  <p>Notes : <span class="font-medium">Moyenne générale : 14/20</span></p>
+                  <p>Absences : <span class="font-medium">2</span></p>
+               </div>
+            </div>
+                      
+            <div class="bg-white rounded-lg shadow p-4">
+               <h2 class="text-lg font-semibold mb-2">Communication</h2>
+               <ul class="list-disc list-inside">
+                  <li><a href="#" class="text-blue-800 hover:underline">Message de M. Fofana (Mathématiques)</a></li>
+                  <li><a href="#" class="text-blue-800 hover:underline">Rendez-vous avec Mme. Koné (Français)</a></li>
+               </ul>
+               <a href="#" class="mt-2 block text-sm text-blue-800 hover:underline">Voir tous les messages</a>
+            </div>
+                      
+            <div class="bg-white rounded-lg shadow p-4">
+               <h2 class="text-lg font-semibold mb-2">Ressources pédagogiques</h2>
+               <ul class="list-disc list-inside">
+                  <li><a href="#" class="text-blue-800 hover:underline">Exercices de mathématiques (niveau CM2)</a></li>
+                  <li><a href="#" class="text-blue-800 hover:underline">Vidéos sur l'histoire de la Côte d'Ivoire</a></li>
+               </ul>
+               <a href="#" class="mt-2 block text-sm text-blue-800 hover:underline">Voir toutes les ressources</a>
+            </div>
+                      
+            <div class="bg-white rounded-lg shadow p-4">
+               <h2 class="text-lg font-semibold mb-2">Calendrier</h2>
+               <p>Prochain événement : Réunion parents-enseignants (15 mars)</p>
+            </div>
+                      
+            <div class="bg-white rounded-lg shadow p-4">
+               <h2 class="text-lg font-semibold mb-2">Alertes</h2>
+               <ul class="list-disc list-inside">
+                  <li><span class="text-red-500">Absence de [Nom de l'enfant] (10 mars)</span></li>
+                  <li><span class="text-green-500">Nouveau devoir de mathématiques</span></li>
+               </ul>
+               <a href="#" class="mt-2 block text-sm text-blue-800 hover:underline">Voir toutes les alertes</a>
+            </div>
+                      
+            <div class="bg-white rounded-lg shadow p-4">
+               <h2 class="text-lg font-semibold mb-2">Paramètres</h2>
+               <a href="#" class="text-blue-800 hover:underline">Modifier le profil</a>
+               <a href="#" class="text-blue-800 hover:underline">Changer le mot de passe</a>
+            </div>      
+         </div>               
+      </div>                
+   </main>
+
+<%- include('partials/footer') %>

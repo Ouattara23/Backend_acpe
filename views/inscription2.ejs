@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+   <main class="mt-5 mb-5">
+      <div class="container mx-auto p-4 bg-gray-100">
+
+         <h1 class="text-2xl font-bold mb-4">Inscription Enseignants</h1>
+                                     
+         <form class="space-y-4">
+            <div>
+               <label for="nom" class="block font-medium">Nom complet :</label>
+               <input type="text" id="nom" name="nom" class="w-full p-2 border rounded text-black">
+            </div>
+                                     
+            <div>
+               <label for="email" class="block font-medium">Adresse email :</label>
+               <input type="email" id="email" name="email" class="w-full p-2 border rounded text-black">
+            </div>
+                                     
+            <div>
+               <label for="telephone" class="block font-medium">Numéro de téléphone :</label>
+               <input type="tel" id="telephone" name="telephone" class="w-full p-2 border rounded text-black">
+            </div>
+                                     
+            <div>
+               <label for="matiere" class="block font-medium">Matière enseignée :</label>
+               <input type="text" id="matiere" name="matiere" class="w-full p-2 border rounded text-black">
+            </div>
+                                     
+            <div>
+               <label for="ecole" class="block font-medium">École :</label>
+               <select id="ecole" name="ecole" class="w-full p-2 border rounded text-black">
+                  <option value="">Sélectionnez une école</option>
+                  <option value="ecole1">École 1</option>
+                  <option value="ecole2">École 2</option>
+               </select>
+            </div>
+                                     
+            <div>
+               <label for="motdepasse" class="block font-medium">Mot de passe :</label>
+               <input type="password" id="motdepasse" name="motdepasse" class="w-full p-2 border rounded text-black">
+            </div>
+                                     
+            <button type="submit" class="bg-orange-400 text-white p-2 rounded w-full">S'inscrire</button>
+         </form>                         
+      </div>
+   </main>
+
+<%- include('partials/footer') %>
