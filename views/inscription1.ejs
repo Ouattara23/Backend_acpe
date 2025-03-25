@@ -1,0 +1,49 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const connectDB = require('./db'); // Votre fichier de connexion à la base de données
+const Post = require('./models/post'); // Le modèle que vous avez créé
+
+const app = express();
+
+// Connexion à la base de données MongoDB
+connectDB();
+
+// Middleware pour analyser les données du formulaire
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Route pour afficher le formulaire d'inscription
+app.get('/inscription', (req, res) => {
+  res.render('inscription'); // Vue avec le formulaire
+});
+
+// Route pour traiter la soumission du formulaire
+app.post('/inscription', async (req, res) => {
+  const { nom, email, telephone, enfant, ecole, motDePasse } = req.body;
+
+  try {
+    // Créer une nouvelle instance du modèle Post avec les données soumises
+    const newPost = new Post({
+      nom,
+      email,
+      telephone,
+      enfant,
+      ecole,
+      motDePasse
+    });
+
+    // Enregistrer les données dans la base de données
+    await newPost.save();
+
+    // Rediriger l'utilisateur ou envoyer une réponse
+    res.send('Inscription réussie!');
+  } catch (err) {
+    console.error('Erreur lors de l\'inscription:', err.message);
+    res.status(500).send('Erreur de serveur');
+  }
+});
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Serveur démarré sur le port ${PORT}`);
+});
