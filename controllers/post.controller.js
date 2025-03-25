@@ -64,3 +64,8 @@ module.exports.setPosts = async(req, res) => {
             res.status(500).json({ message: "Erreur serveur." });
         }
 };
+
+//remplir le formulaire
+//module.exports.getPosts = (req, res) => {
+  //  res.render('forlumulaire1');
+//};
