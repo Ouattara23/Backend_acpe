@@ -1,6 +1,6 @@
 const express = require('express');
-const app = express();
 const connectDB = require('./config/db');
+const app = express();
 const port = 4000;
 const path = require('path');
 
@@ -20,6 +20,7 @@ app.use(express.static('publics'));
 //Middleware qui permet de traiter les données la requête
 app.use(express.json()); // Pour analyser les corps de requêtes JSON
 app.use(express.urlencoded({ extended: true })); // Pour analyser les corps de requêtes URL-encoded
+
 
 //les routers
 app.use("/post", require("./routes/post.router"));
