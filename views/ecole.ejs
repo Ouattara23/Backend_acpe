@@ -2,86 +2,77 @@
 
 <main>
     <section class="bg-gray-100 h-screen flex items-center justify-center">
-        <div class="bg-white p-8 rounded shadow-md w-96">
-            <h2 class="text-2xl font-semibold mb-6 text-center">Connexion</h2>
-            <form action="#" method="POST">
-                <!--informations sur l'école-->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                    <div class="mb-4">
-                        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom de l'école :</label>
-                        <input type="text" id="nom" name="nom" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+        <div class="flex justify-center items-center min-h-screen bg-gray-100">
+            <div class="container mx-auto p-6 bg-white shadow-lg rounded-lg w-full max-w-2xl">
+                <h1 class="text-2xl font-bold text-center mb-6">Inscription d'une École</h1>
+                <form class="space-y-4" method="post" action="/inscription-ecole" enctype="multipart/form-data">
+                    
+                    <!-- Informations sur l'école -->
+                    <div>
+                        <label for="nom_ecole" class="block font-medium">Nom de l'école :</label>
+                        <input type="text" id="nom_ecole" name="nom_ecole" class="w-full px-3 py-2 border rounded text-black" required>
                     </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Logo de l'école :</label>
-                        <input type="file" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <div>
+                        <label for="logo_ecole" class="block font-medium">Logo de l'école :</label>
+                        <input type="file" id="logo_ecole" name="logo_ecole" class="w-full px-3 py-2 border rounded" accept="image/*">
                     </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                    <div class="mb-4">
-                        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom de l' école</label>
-                        <input type="text" id="nom" name="nom" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <div>
+                        <label for="adresse_ecole" class="block font-medium">Adresse :</label>
+                        <input type="text" id="adresse_ecole" name="adresse_ecole" class="w-full px-3 py-2 border rounded text-black">
                     </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Adresse :</label>
-                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="ville_ecole" class="block font-medium">Ville :</label>
+                            <input type="text" id="ville_ecole" name="ville_ecole" class="w-full px-3 py-2 border rounded text-black">
+                        </div>
+                        <div>
+                            <label for="code_postal_ecole" class="block font-medium">Code Postal :</label>
+                            <input type="text" id="code_postal_ecole" name="code_postal_ecole" class="w-full px-3 py-2 border rounded text-black">
+                        </div>
                     </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                    <div class="mb-4">
-                        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Ville :</label>
-                        <input type="text" id="nom" name="nom" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <!-- Informations sur l'enseignant responsable -->
+                    <div>
+                        <label for="nom_enseignant" class="block font-medium">Nom de l'enseignant responsable :</label>
+                        <input type="text" id="nom_enseignant" name="nom_enseignant" class="w-full px-3 py-2 border rounded text-black" required>
                     </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Code Postal :</label>
-                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <div>
+                        <label for="matiere_enseignee" class="block font-medium">Matière enseignée :</label>
+                        <input type="text" id="matiere_enseignee" name="matiere_enseignee" class="w-full px-3 py-2 border rounded text-black" required>
                     </div>
-                </div>
-
-                <!--Informations sur l'enseignants-->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                    <div class="mb-4">
-                        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Nom de l'enseignant :</label>
-                        <input type="text" id="nom" name="nom" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <!-- Informations académiques -->
+                    <div>
+                        <label for="niveaux_scolaires" class="block font-medium">Niveaux scolaires proposés :</label>
+                        <input type="text" id="niveaux_scolaires" name="niveaux_scolaires" class="w-full px-3 py-2 border rounded text-black" placeholder="Ex: Primaire, Collège, Lycée">
                     </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Matière enseignée :</label>
-                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <!-- Informations de connexion -->
+                    <div>
+                        <label for="email_admin" class="block font-medium">Email administrateur :</label>
+                        <input type="email" id="email_admin" name="email_admin" class="w-full px-3 py-2 border rounded text-black" required>
                     </div>
-                </div>
-
-                <!--Information académique-->
-                <div class="grid grid-cols-1 ">
-                    <div class="mb-4">
-                        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Email administrateur :</label>
-                        <input type="text" id="nom" name="nom" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label for="mot_de_passe" class="block font-medium">Mot de passe :</label>
+                            <input type="password" id="mot_de_passe" name="mot_de_passe" class="w-full px-3 py-2 border rounded text-black" required>
+                        </div>
+                        <div>
+                            <label for="confirmer_mot_de_passe" class="block font-medium">Confirmer le mot de passe :</label>
+                            <input type="password" id="confirmer_mot_de_passe" name="confirmer_mot_de_passe" class="w-full px-3 py-2 border rounded text-black" required>
+                        </div>
                     </div>
-                </div>
-
-                <!--Informations de connexion-->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-                    <div class="mb-4">
-                        <label for="nom" class="block text-gray-700 text-sm font-bold mb-2">Email administrateur :</label>
-                        <input type="text" id="nom" name="nom" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe :</label>
-                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-between mb-6">
-                    <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Mot de passe :</label>
-                    <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500" required>
-                </div>
-
-                <div class="flex items-center justify-between">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">S'inscrire'</button>
-                </div>
-            </form>
+                    
+                    <button type="submit" class="bg-blue-500 text-white p-2 rounded w-full">S'inscrire</button>
+                </form>
+            </div>
         </div>
-    </section>
+            </section>
 </main>
 
 <%- include('partials/footer') %>
