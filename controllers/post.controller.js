@@ -76,6 +76,6 @@ module.exports.setPosts = async(req, res) => {
 };
 
 //remplir le formulaire
-//module.exports.getPosts = (req, res) => {
-  //  res.render('forlumulaire1');
-//};
+module.exports.getPosts = (req, res) => {
+  res.render('ecole');
+};
