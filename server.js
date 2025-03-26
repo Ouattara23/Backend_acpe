@@ -39,12 +39,8 @@ app.get('/parent', (req, res) => {
     res.render('parent'); // Assure-toi d'avoir un fichier views/parent.ejs
 });
 
-app.get('/enseignant', (req, res) => {
-    res.render('enseignant'); // Assure-toi d'avoir un fichier views/enseignant.ejs
-});
-
-app.get('/inscription1', (req, res) => {
-    res.render('inscription1'); // Assure-toi d'avoir un fichier views/inscription1.ejs
+app.get('/ecole', (req, res) => {
+    res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
 });
 
 //Démarrache du serveur
