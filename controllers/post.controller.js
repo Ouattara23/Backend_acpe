@@ -40,21 +40,31 @@ module.exports.setPosts = async(req, res) => {
 
     try{ 
         const{
-            nom,
-            email,
-            telephone,
-            enfant,
-            ecole,
-            motDePasse,
+            nom_ecole,
+            logo_ecole,
+            adresse_ecole,
+            ville_ecole,
+            code_postal_ecole,
+            nom_enseignant,
+            matiere_enseigne,
+            niveaux_scolaires,
+            email_admin,
+            mot_de_passe,
+            confirmer_mot_de_passe
         } = req.body;
 
         const post = await PostModel.create({
-            nom,
-            email,
-            telephone,
-            enfant,
-            ecole,
-            motDePasse,
+            nom_ecole,
+            logo_ecole,
+            adresse_ecole,
+            ville_ecole,
+            code_postal_ecole,
+            nom_enseignant,
+            matiere_enseigne,
+            niveaux_scolaires,
+            email_admin,
+            mot_de_passe,
+            confirmer_mot_de_passe
         });
 
         console.log("Post créé avec succès:", post); // Ajout de cette ligne
