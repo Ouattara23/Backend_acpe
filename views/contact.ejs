@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+
+<main>
+    <section class="bg-[linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('https://cdn.pixabay.com/photo/2020/09/24/16/50/board-5599231_640.png')] bg-no-repeat bg-center bg-cover h-[300px] sm:h-[250px] lg:h-[250px]">
+        <div class="text-center font-bold text-white p-7 text-8xl">
+            <h1 class="mt-7">Espace écoles</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="bg-black/35 p-4">
+            <h3 class="text-lg font-semibold mb-2">Contactez-nous</h3>
+             <form class="space-y-2" method="post" action="">
+                 <div>
+                     <input type="text" name="nom" placeholder="Votre nom" class="w-full p-2 rounded text-black">
+                 </div>
+                 <div>
+                     <input type="email" name="email" placeholder="Votre email" class="w-full p-2 rounded text-black">
+                 </div>
+                 <div>
+                     <textarea placeholder="Votre message" name="message" class="w-full p-2 rounded text-black"></textarea>
+                 </div>
+                 <button type="submit" class="bg-green-500 text-orange-400 p-2 rounded w-full font-bold">Envoyer</button>
+             </form>
+         </div>
+       </div>   
+    </section>
+</main>
+
+<%- include('partials/footer') %>
