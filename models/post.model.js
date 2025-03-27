@@ -61,13 +61,25 @@ module.exports = mongoose.model('post', postSchema);
 
 
 //Pour le formulaire de contact
-const Message = mongoose.model('Message', MessageSchema);
-
 const MessageSchema = new mongoose.Schema({
-    nom: String,
-    email: String,
-    message: String
-});
+    nom:{
+    type: String,
+    required: true
+    },
 
-module.exports = Message;
 
+    email:{
+    type: String,
+    required: true,
+    match: [/.+@.+\..+/, "Veuillez entrer une adresse email valide"]
+    },
+     
+    message:{
+        type: String,
+        required: true
+    }
+ });
+ 
+ const Message = mongoose.model('Message', MessageSchema);
+ 
+ module.exports = Message;
