@@ -63,6 +63,51 @@ app.get('/ecole', (req, res) => {
     res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
 });
 
+const Inscription = require('./models/Inscription'); // Import du modèle
+
+app.post('/inscription-ecole', async (req, res) => {
+    try {
+        const { 
+            nom_ecole,
+            logo_ecole,
+            adresse_ecole,
+            ville_ecole,
+            code_postal_ecole,
+            nom_enseignant,
+            matiere_enseigne,
+            niveaux_scolaires,
+            email_admin,
+            mot_de_passe,
+            confirmer_mot_de_passe
+
+         } = req.body;
+
+        // Création d'une nouvelle inscription
+        const nouvelleInscription = new Inscription({
+            nom_ecole,
+            logo_ecole,
+            adresse_ecole,
+            ville_ecole,
+            code_postal_ecole,
+            nom_enseignant,
+            matiere_enseigne,
+            niveaux_scolaires,
+            email_admin,
+            mot_de_passe,
+            confirmer_mot_de_passe
+        });
+
+        // Sauvegarde dans la base de données
+        await nouvelleInscription.save();
+
+        res.send('Inscription enregistrée avec succès !');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Erreur lors de l\'enregistrement');
+    }
+});
+
+
 
 
 //Démarrache du serveur
