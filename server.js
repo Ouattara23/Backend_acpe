@@ -48,8 +48,10 @@ app.get('/contact', (req, res) => {
     res.render('contact'); // Assure-toi d'avoir un fichier views/contact.ejs
 });
 
-app.get('/inscription', (req, res) => {
-    res.render('inscription'); // Assure-toi d'avoir un fichier views/inscription.ejs
+// Définition de la route POST
+app.post('/inscription-ecole', (req, res) => {
+    console.log(req.body); // Pour voir les données envoyées
+    res.send('Inscription reçue');
 });
 
 
