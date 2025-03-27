@@ -3,7 +3,7 @@ const connectDB = require('./config/db');
 const app = express();
 const port = 4000;
 const path = require('path');
-const messageRoutes = require('./routes'); // Adapte le chemin selon ton projet
+const messageRouter = require('./router'); // Adapte le chemin selon ton projet
 
 
 //Connection à la base de données
@@ -45,7 +45,7 @@ app.get('/ecole', (req, res) => {
     res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
 });
 
-app.use(messageRoutes);
+app.use(messageRouter);
 
 
 //Démarrache du serveur
