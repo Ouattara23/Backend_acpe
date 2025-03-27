@@ -55,5 +55,19 @@ confirmer_mot_de_passe:{
     required: true
 }
 
-})
+});
+
 module.exports = mongoose.model('post', postSchema);
+
+
+//Pour le formulaire de contact
+const Message = mongoose.model('Message', MessageSchema);
+
+const MessageSchema = new mongoose.Schema({
+    nom: String,
+    email: String,
+    message: String
+});
+
+module.exports = Message;
+
