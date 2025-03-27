@@ -48,6 +48,11 @@ app.get('/contact', (req, res) => {
     res.render('contact'); // Assure-toi d'avoir un fichier views/contact.ejs
 });
 
+app.get('/inscription', (req, res) => {
+    res.render('inscription'); // Assure-toi d'avoir un fichier views/inscription.ejs
+});
+
+
 
 app.get('/ecole', (req, res) => {
     res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
