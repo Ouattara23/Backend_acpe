@@ -1,7 +1,5 @@
 const express = require('express');
 const { setPosts, getPosts, getPostsById } = require("../controllers/post.controller");
-const Message = require('../models/Message'); // Correction du chemin
-
 const router = express.Router();
 
 // Routes pour les posts
