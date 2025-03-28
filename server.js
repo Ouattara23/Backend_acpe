@@ -101,8 +101,8 @@ app.get('/ecole', (req, res) => {
     res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
 });
 
-app.get('/inscription-ecole', (req, res) => {
-    res.render('index'); // Assure-toi d'avoir un fichier views/enseignant.ejs
+app.get('/inscription', (req, res) => {
+    res.render('inscription'); // Assure-toi d'avoir un fichier views/enseignant.ejs
 });
 
 
