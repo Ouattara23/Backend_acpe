@@ -96,12 +96,6 @@ app.post('/inscription-ecole', async (req, res) => {
     }
 });
 
-// Définition de la route POST
-app.post('/inscription-ecole', (req, res) => {
-    console.log(req.body); // Pour voir les données envoyées
-    res.send('Inscription reçue');
-});
-
 
 app.get('/ecole', (req, res) => {
     res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
