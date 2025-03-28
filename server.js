@@ -3,6 +3,8 @@ const connectDB = require('./config/db');
 const app = express();
 const port = 4000;
 const path = require('path');
+const Ecole = require('./models/Ecole'); // Import du modèle
+
 
 
 //Connection à la base de données
@@ -48,8 +50,50 @@ app.get('/contact', (req, res) => {
     res.render('contact'); // Assure-toi d'avoir un fichier views/contact.ejs
 });
 
-app.get('/inscription', (req, res) => {
-    res.render('inscription'); // Assure-toi d'avoir un fichier views/inscription.ejs
+
+app.post('/inscription-ecole', async (req, res) => {
+    try {
+        const { 
+            nom_ecole,
+            logo_ecole,
+            adresse_ecole,
+            ville_ecole,
+            code_postal_ecole,
+            nom_enseignant,
+            matiere_enseigne,
+            niveaux_scolaires,
+            email_admin,
+            mot_de_passe,
+            confirmer_mot_de_passe
+         } = req.body;
+
+        // Vérifier si l'école existe déjà
+        const existingEcole = await Ecole.findOne({ email });
+        if (existingEcole) {
+            return res.status(400).send('Cette école est déjà enregistrée.');
+        }
+
+        // Enregistrer dans la base de données
+        const nouvelleEcole = new Ecole({ 
+            nom_ecole,
+            logo_ecole,
+            adresse_ecole,
+            ville_ecole,
+            code_postal_ecole,
+            nom_enseignant,
+            matiere_enseigne,
+            niveaux_scolaires,
+            email_admin,
+            mot_de_passe,
+            confirmer_mot_de_passe
+         });
+        await nouvelleEcole.save();
+
+        res.send('Inscription réussie');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Erreur serveur');
+    }
 });
 
 // Définition de la route POST
