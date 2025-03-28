@@ -1,9 +1,9 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const Ecole = require('./models/ecole');
 const app = express();
 const port = 4000;
 const path = require('path');
-const model = require('./models/model'); // Import du modèle
 
 
 
@@ -68,13 +68,13 @@ app.post('/inscription-ecole', async (req, res) => {
          } = req.body;
 
         // Vérifier si l'école existe déjà
-        const existingEcole = await model.findOne({ email });
+        const existingEcole = await Ecole.findOne({ email_admin });  // Utilise le modèle 'Ecole' ici
         if (existingEcole) {
             return res.status(400).send('Cette école est déjà enregistrée.');
         }
 
         // Enregistrer dans la base de données
-        const nouvelleModel = new Model({ 
+        const nouvelleEcole = new Ecole({ 
             nom_ecole,
             logo_ecole,
             adresse_ecole,
@@ -87,7 +87,7 @@ app.post('/inscription-ecole', async (req, res) => {
             mot_de_passe,
             confirmer_mot_de_passe
          });
-        await nouvelleModel.save();
+        await nouvelleEcole.save();
 
         res.send('Inscription réussie');
     } catch (error) {
@@ -100,6 +100,11 @@ app.post('/inscription-ecole', async (req, res) => {
 app.get('/ecole', (req, res) => {
     res.render('ecole'); // Assure-toi d'avoir un fichier views/enseignant.ejs
 });
+
+app.get('/inscription-ecole', (req, res) => {
+    res.render('index'); // Assure-toi d'avoir un fichier views/enseignant.ejs
+});
+
 
 
 
